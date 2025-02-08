@@ -1,0 +1,35 @@
+function XenNotification(title)
+    return function(description)
+        return function(colorR, colorG, colorB)
+            return function(time)
+                local NotiLibScreenGUI = Instance.new("ScreenGui")
+                NotiLibScreenGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+                
+                local titleLabel = Instance.new("TextLabel")
+                titleLabel.Parent = NotiLibScreenGUI
+                titleLabel.Size = UDim2.new(0, 400, 0, 50)
+                titleLabel.Position = UDim2.new(0.5, -200, 0.4, 60)
+                titleLabel.Text = title
+                titleLabel.TextSize = 18
+                titleLabel.Font = Enum.Font.Code
+                titleLabel.TextColor3 = Color3.fromRGB(colorR, colorG, colorB)
+                titleLabel.BackgroundTransparency = 1
+                titleLabel.TextStrokeTransparency = 0
+
+                local descriptionLabel = Instance.new("TextLabel")
+                descriptionLabel.Parent = NotiLibScreenGUI
+                descriptionLabel.Size = UDim2.new(0, 400, 0, 50)
+                descriptionLabel.Position = UDim2.new(0.5, -200, 0.5, -25)
+                descriptionLabel.Text = description
+                descriptionLabel.TextSize = 17
+                descriptionLabel.Font = Enum.Font.Code
+                descriptionLabel.TextColor3 = Color3.fromRGB(colorR, colorG, colorB)
+                descriptionLabel.BackgroundTransparency = 1
+                descriptionLabel.TextStrokeTransparency = 0
+
+                wait(time)
+                NotiLibScreenGUI:Destroy()
+            end
+        end
+    end
+end
