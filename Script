@@ -33,3 +33,7 @@ function XenNotification(title)
         end
     end
 end
+
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/XENFLIX3R/XenNoti-Basic/refs/heads/main/Script"))() -- Copy this its the loadstring
+XenNotification("Title")("This is a desc!")(255, 255, 255)(5)
+-- Call function(Title) (Desc under title)(Color of text)(Time of text)
